@@ -1,4 +1,4 @@
-int gcd(int num1, int num2) 
+int greatestCommonDivider(int num1, int num2) 
 {
     while (num2) 
     {
