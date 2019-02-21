@@ -1,3 +1,31 @@
+    //standard solution:
+    vector<int> preorderTraversal(TreeNode* root) 
+    {
+        std::vector<int> nodes;
+        std::stack<TreeNode*> stack;
+        
+        auto curr = root;
+        while (!stack.empty() || curr)
+        {
+            if (curr)
+            {
+                nodes.push_back(curr->val);
+                stack.push(curr);
+                curr = curr->left;
+            }
+            else
+            {
+                curr = stack.top();
+                stack.pop();
+                curr = curr->right;
+            }
+        }
+        return nodes;
+    }
+
+
+
+    //simpler solution:
     vector<int> preorderTraversal(TreeNode* root) 
     {
         if (!root)  return {};
