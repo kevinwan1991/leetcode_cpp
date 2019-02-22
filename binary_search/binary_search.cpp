@@ -7,7 +7,7 @@ int lower_bound(const std::vector<int>& nums, int target)
         if (nums[mid] < target)
             l = mid+1;
         else
-            r = mid-1;
+            r = mid-1; // nums[mid]==target doesn't mean mid is the first element matches target
     }
     return l;
 }
@@ -18,7 +18,7 @@ int upper_bound(const std::vector<int>& nums, int target)
     {
         int mid = (right - left) / 2 + left ;
         if (nums[mid] <= target)
-            left = mid + 1;             
+            left = mid + 1; // nums[mid]==target doesn't mean mid is the last one matches target
         else         
             right = mid ;
     }
