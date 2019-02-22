@@ -6,12 +6,28 @@ int lower_bound(const std::vector<int>& nums, int target)
     {
         int mid = (r-l)/2+l;
         if (nums[mid] < target)
-            l = mid+1;
+            l = mid+1; 
         else
             r = mid-1; // nums[mid]==target doesn't mean mid is the first element matches target
     }
     return l;
 }
+
+int lower_bound(const std::vector<int>& nums, int target) 
+{
+    // first element that greater than or equal to target
+    int l = 0, r = nums.size()-1;
+    while (l < r) 
+    {
+        int mid = (r-l)/2+l;
+        if (nums[mid] < target)
+            l = mid+1; 
+        else
+            r = mid;
+    }
+    return l;
+}
+
 int upper_bound(const std::vector<int>& nums, int target)
 {
     // first element that greater than target
