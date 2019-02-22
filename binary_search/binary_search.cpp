@@ -1,5 +1,6 @@
 int lower_bound(const std::vector<int>& nums, int target) 
 {
+    // first element that greater than or equal to target
     int l = 0, r = nums.size()-1;
     while (l <= r) 
     {
@@ -13,6 +14,7 @@ int lower_bound(const std::vector<int>& nums, int target)
 }
 int upper_bound(const std::vector<int>& nums, int target)
 {
+    // first element that greater than target
     int left = 0 , right = nums.size() ; 
     while(left < right)
     {
