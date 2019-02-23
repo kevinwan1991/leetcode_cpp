@@ -23,7 +23,7 @@ int lower_bound(const std::vector<int>& nums, int target)
         if (nums[mid] < target)
             l = mid+1; // once num[lhs]==target, lhs will not move
         else
-            r = mid;
+            r = mid; // even nums[rhs]==target, rhs will decrease to meet lower bound
     }
     return l;
 }
