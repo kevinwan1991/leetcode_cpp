@@ -20,8 +20,9 @@ public:
         {
             pii p = pq.top(); pq.pop();
             u = p.second;
-			      if (vis[u]) continue; // longer path in priority queue for the same node will be disgarded.
-            for (auto& to : g[u]) 
+	    if (vis[u]) continue; // longer path in priority queue for the same node will be disgarded.
+            
+	    for (auto& to : g[u]) 
             {
                 v = to.first, w = to.second;
                 if (dist[v] > dist[u] + w) 
