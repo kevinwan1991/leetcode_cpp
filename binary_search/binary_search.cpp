@@ -21,7 +21,7 @@ int lower_bound(const std::vector<int>& nums, int target)
     {
         int mid = (r-l)/2+l;
         if (nums[mid] < target)
-            l = mid+1; 
+            l = mid+1; // once num[lhs]==target, lhs will not move
         else
             r = mid;
     }
@@ -36,7 +36,7 @@ int upper_bound(const std::vector<int>& nums, int target)
     {
         int mid = (right - left) / 2 + left ;
         if (nums[mid] <= target)
-            left = mid + 1; // nums[mid]==target doesn't mean mid is the last one matches target
+            left = mid + 1; // nums[mid]==target, lhs will move until nums[lhs]>target
         else         
             right = mid ;
     }
